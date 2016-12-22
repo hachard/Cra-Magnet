@@ -15,7 +15,7 @@ class crawler(object):
         r = requests.get(URL + "/search/" + name, timeout=5)
         data = r.text
         soup = BeautifulSoup(data, 'html.parser')
-        for link in soup.find_all('a', {'class': 'magnet'}, limit=5):
+        for link in soup.find_all('a', {'class': 'magnet'}):
             result = (link.get('title'))
             result = result.replace(' Magnet Link', '')
             result = result.replace(' Torrent:', '')
