@@ -1,7 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1>Hi, {{ user.nickname }}!</h1>
-    {% for post in posts %}
-    <div><p>{{ post }}</p></div>
+    <h1>Search for TV show</h1>
+    <h2>(Very alpha!)</h2>
+    <form action="/" method="POST">
+        <input type="text" name="text" placeholder="Search...">
+        <input type="submit" name="my-form" value="Send">
+    </form>
+    {% for title, link in posts.items() %}
+    <div><a href={{ link }}>Magnet</a><a>{{ title }}</a></div>
     {% endfor %}
 {% endblock %}
